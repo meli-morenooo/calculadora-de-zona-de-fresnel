@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Zona de Fresnel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calcu-container">
+            <h1 class="titulo">Calculadora de Zona de Fresnel</h1>
+            <img src="formula.png" alt="Imagen de la Zona de Fresnel" class="imagen-fresnel">
+            <form id="formulario-calculadora">
+                <div class="grupo-formulario">
+                    <label for="distancia">Distancia (km):</label>
+                    <input type="number" class="control-formulario" id="distancia" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="frecuencia">Frecuencia (GHz):</label>
+                    <input type="number" step="0.01" class="control-formulario" id="frecuencia" required>
+                </div>
+                <button type="button" id="boton-calcular" class="boton-calcular">Calcular</button>
+            </form>
+            <p id="mensaje-error" class="mensaje-error"></p>
+        </div>
+        <div class="resultado-container" id="resultado-container" style="display: none;">
+            <h2 class="titulo-resultado">Resultado de la Zona de Fresnel</h2>
+            <p id="resultado-fresnel" class="resultado-fresnel"></p>
+            <h3 class="titulo-pasos">Pasos del Cálculo</h3>
+            <table id="tabla-pasos" class="tabla-pasos">
+                <tr>
+                    <td>Fórmula:</td>
+                    <td id="paso-formula">F1[m] = 8.656 * √(D[km]) / f[GHz]</td>
+                </tr>
+                <tr>
+                    <td>Donde D = <span id="valor-distancia">7</span> km y f = <span id="valor-frecuencia">2.4</span> GHz:</td>
+                    <td id="paso-calculo">F1[m] = 8.656 * √(7) / 2.4 ≈ 9.540 metros</td>
+                </tr>
+            </table>
+            <button type="button" id="boton-atras" class="boton-atras">Volver a la Calculadora</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
